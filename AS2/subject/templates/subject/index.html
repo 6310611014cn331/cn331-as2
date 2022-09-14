@@ -1,15 +1,18 @@
-{% extends 'subject/layout.html' %}
+{% extends 'subject\\layout.html' %}
 {% block body %}
 
 <h>Subject List:</h1>
 <ul>
-    {{e_subject.Subject}}
-    {% for e_subject in Subject %}
-    <li>{{Subject}}</li>
+    {% for s in subject %}
+    <li>
+        <a href= "{% url 'subject' s.id %}">
+            {{ s }}
+        </a>
+    </li>
     {% empty %}
-    <li>Empty</li>
+    <li>No flight.</li>
     {% endfor %}
-    <li>งงทำไม่ได้</li>
+
 </ul>
 
 {% endblock body %}

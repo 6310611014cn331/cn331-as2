@@ -1,0 +1,17 @@
+{% extends "users\\layout.html" %}
+{% block title %}
+<title>login</title>
+{% endblock title %}
+{% block body %}
+<h1>LOGIN</h1>
+{% if massage %}
+    <div style="color:red">
+        error
+    </div>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+</form>
+{% endblock body %}

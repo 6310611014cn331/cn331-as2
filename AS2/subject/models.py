@@ -17,4 +17,12 @@ class detail(models.Model):
 
 
     def __str__(self):
-        return f"{self.code} {self.name}"
+        return f"{self.code} {self.name} "
+
+class quotas(models.Model):
+    sit = models.IntegerField()
+    details = models.ManyToManyField(detail, blank=True, related_name="qouta")
+    
+    def __str__(self):
+        return f"{self.sit}"
+    
