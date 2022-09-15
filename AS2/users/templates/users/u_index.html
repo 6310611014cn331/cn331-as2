@@ -2,9 +2,18 @@
 {% block title %}
 Profile
 {% endblock%}
-{% block body %}
-<h1>Profile</h1>
-<h3>Name: {{ request.user.first_name }}</h3>
+<div>
+    {% block body %}
+    <h1>Profile</h1>
+    <ul>
+        <li>Name: {{ request.user.first_name }} {{ request.user.last_name }} <br><br></li>
+        <li>Username: {{ request.user.username }} <br><br></li>
+        <li>Email: {{ request.user.email }} <br><br></li>
 
-<a href="{% url 'logout' %}">LOGOUT</a>
-{% endblock %}
+    </ul>
+
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    <a href="{#}">QUOTA</a>
+    <a href="{% url 'subject' %}">see all subjects</a>
+    {% endblock %}
+</div>

@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        div{background-color: white; border: solid 5px whitesmoke; width: 60%;
+        height: 110% ; text-align: center; margin-left: auto;
+        margin-right: auto;}
+    </style>
     <title>{% block title %}
         {% endblock %}
     </title>
 </head>
-<body>
-    {% block body %}
-    {% endblock %}
+<body background="https://user-images.githubusercontent.com/69451786/190416720-50bbf996-9b35-4a27-a83f-ae3716c8745a.jpg">
+    <p>
+        <div>    
+            {% block body %}
+            {% endblock %}
+        </div>>
+    </p>
 </body>
 </html>

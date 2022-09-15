@@ -1,7 +1,7 @@
 {% extends 'subject\\layout.html' %}
 {% block body %}
 
-<h>Subject List:</h1>
+<h1>Subject List:</h1>
 <ul>
     {% for s in subject %}
     <li>
@@ -10,7 +10,7 @@
         </a>
     </li>
     {% empty %}
-    <li>No flight.</li>
+    <li>No subject.</li>
     {% endfor %}
 
 </ul>

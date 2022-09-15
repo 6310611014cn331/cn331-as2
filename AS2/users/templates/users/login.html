@@ -2,17 +2,19 @@
 {% block title %}
 LOGIN
 {% endblock%}
-{% block body %}
-<h1>LOGIN</h1>
-{% if message %}
-    <div style="color:red">
-        {{message}}
-    </div>
-{% endif%}
-<form action="{% url 'login' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit" value="Login">
-</form>
-{% endblock %}
+<div>
+    {% block body %}
+    <h1>LOGIN</h1>
+    {% if message %}
+        <p style="color:red">
+            {{message}}
+        </p>
+    {% endif%}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username"><br><br>
+        <input type="password" name="password" placeholder="password"><br><br>
+        <input type="submit" value="Login"><br><br>
+    </form>
+    {% endblock %}
+</div>

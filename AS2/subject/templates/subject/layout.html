@@ -2,9 +2,20 @@
 <html lang='en'>
     <head>
         <title>Subject</title>
+        <style>
+            div{background-color: white; border: solid 5px whitesmoke; width: 80%;
+            height: 110% ; margin-left: auto;
+            margin-right: auto;}
+        </style>
     </head>
-    <body>
-        {% block body %}
+    <body background="https://user-images.githubusercontent.com/69451786/190448218-9b9db542-18b5-41d7-9fe7-04bf5c5d818b.jpg">
+        <div>
+            {% block body %}
         {% endblock body %}
+        </div>
     </body>
+    <footer style="background-color: lightgray; width: 80%; height: 100%; text-align: center;  margin-left: auto; margin-right: auto;">
+        <a href= "{% url 'users' %}">profile</a>
+        <a href= "#">QUOTA</a>
+    </footer>
 </html>
