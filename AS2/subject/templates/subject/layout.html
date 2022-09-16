@@ -3,9 +3,23 @@
     <head>
         <title>Subject</title>
         <style>
-            div{background-color: white; border: solid 5px whitesmoke; width: 80%;
-            height: 110% ; margin-left: auto;
-            margin-right: auto;}
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+            div{background-color: rgba(67,87,120,0.5); border: solid 3px #5f869f; width: 800px;
+            height: 100%; margin-left: auto; margin-right: auto; margin-top:50px; font-family:Quicksand;}
+
+            h1{color:#191f35; margin-left:20px;}
+            a{color:#191f35; text-decoration:none; font-size:20px; font-weight: bold;}
+            a:hover{color:#485387; transition: 0.2s;}
+            li{margin-bottom:10px;font-weight: bold;}
+
+
+            /*profile Quota*/
+            footer{background-color: rgba(165,173,203,0.6); width: 800px; height: auto; text-align: center;
+            margin-left:auto; margin-right:auto;}
+            #box2{margin-left:9px; margin-right:9px; margin-top:7px;}
+            
+
         </style>
     </head>
     <body background="https://user-images.githubusercontent.com/69451786/190448218-9b9db542-18b5-41d7-9fe7-04bf5c5d818b.jpg">
@@ -14,8 +28,8 @@
         {% endblock body %}
         </div>
     </body>
-    <footer style="background-color: lightgray; width: 80%; height: 100%; text-align: center;  margin-left: auto; margin-right: auto;">
-        <a href= "{% url 'users' %}">profile</a>
-        <a href= "#">QUOTA</a>
+    <footer>
+        <a id="box2" href= "{% url 'users' %}">Profile</a>
+        <a id="box2" href= "#">Quota</a>
     </footer>
 </html>

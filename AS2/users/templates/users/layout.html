@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <style>
-        div{background-color: white; border: solid 5px whitesmoke; width: 60%;
-        height: 110% ; text-align: center; margin-left: auto;
-        margin-right: auto;}
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        
+        /*login*/
+        div{background-color: rgba(0,0,0,0.7); border: solid 5px whitesmoke; width: 400px;
+        height: 400px ; text-align: center; margin-left: auto;
+        margin-right: auto; margin-top:60px; font-family:Quicksand;}
+        
+        div h1{color:white; font-size:50px; letter-spacing:5px;}
+        div p{color:red;}
+        #loginbox{background-color:#f6cf88; width:120px; height:40px;font-family:Quicksand;}
+        #loginbox:hover{background-color:#c15225; transition: 0.2s;}
+        .box1{color:white;background-color: rgba(255,255,255,0.2); width:180px; height:20px;font-family:Quicksand;}
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #9b9bac;
+        }
+        ::placeholder { /* Chrome, Firefox */
+            color: #9b9bac;
+            opacity: 1;
+        }
+
+        /*u_index*/
+        div ul{color:white; text-align:left; margin-left:20px;}
+        div a{color:#ecbaa8; text-decoration:none; margin-left:7px; margin-right:7px;}
+        div a:hover{color:#b3674a; transition: 0.2s;}
+        #logoutt {color:#e1c0b2; background-color:rgba(193,82,37,0.5); padding:5px; border: solid 1px black;}
+        #logoutt:hover{background-color:rgb(164,66,27,0.5); transition: 0.2s;}
+        
     </style>
     <title>{% block title %}
         {% endblock %}
