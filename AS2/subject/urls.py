@@ -5,5 +5,6 @@ from users import views as u_views
 urlpatterns = [
     path('', views.index, name='index'),
     path("<int:subject_id>", views.subject, name="subject"),
-    path('users', u_views.index, name="users")
+    path('users', u_views.index, name="users"),
+    path('<username>/quotas', u_views.quotas, name='quotas')
 ]

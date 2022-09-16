@@ -30,6 +30,6 @@
     </body>
     <footer>
         <a id="box2" href= "{% url 'users' %}">Profile</a>
-        <a id="box2" href= "#">Quota</a>
+        <a id="box2" href= "{% url 'quotas' user.username %}">Quota</a>
     </footer>
 </html>
