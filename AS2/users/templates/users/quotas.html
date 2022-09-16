@@ -17,7 +17,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username %}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
@@ -43,7 +43,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
@@ -69,7 +69,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
@@ -95,11 +95,11 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Thurseday"%}
+                                {% if n.days == "Thurseday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -121,7 +121,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
@@ -147,7 +147,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
@@ -173,7 +173,7 @@ quota
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
-                    <form action="{% url 'book'%}" method="post">
+                    <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
