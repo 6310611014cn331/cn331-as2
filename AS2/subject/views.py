@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import detail
+from .models import detail, quotas
 # Create your views here.
 
 def index(request):

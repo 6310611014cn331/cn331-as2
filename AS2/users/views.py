@@ -1,7 +1,11 @@
+from operator import sub
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from users.models import user_quotas
+from subject.models import quotas as op_quota
+from django.contrib.auth.models import User
 # Create your views here.
 
 def index(request):
@@ -20,6 +24,27 @@ def login_view(request):
         else:
             return render(request, "users\\login.html", {"message":"Invalid credentials."})
     return render(request, "users\\login.html")
+
 def logout_view(request):
     logout(request)
     return render(request, "users\\login.html", {"message":"You are logged out"})
+
+def quotas(request, username):
+    user = User.objects.get(username=username)
+    u = (user.usequota.get()).id
+    q = user_quotas.objects.get(pk=u)
+    return render(request, "users\\quotas.html", {
+        "subselect":  q.subject.all(), 
+        "nonselect":op_quota.objects.exclude(user_quota=q).all(),
+        "day":op_quota.days,
+        "time":op_quota.time,
+    })
+
+def book(request,  username):
+    user = User.objects.get(username=username)
+    u = (user.usequota.get()).id
+    if request.method == "POST":
+        subject = user_quotas.objects.get(pk=u)
+        quotas = op_quota.objects.get(pk=request.POST["op_quotas"])
+        subject.add(quotas)
+        return HttpResponseRedirect(reverse("qoutas"))

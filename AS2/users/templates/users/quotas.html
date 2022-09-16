@@ -1,0 +1,196 @@
+{% extends "users\\layout.html" %}
+{% block title %}
+quota
+{% endblock%}
+<div>
+    {% block body %}
+    <h1>Your Quota</h1>
+    <table>
+        <tr>
+            <th> Monday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Monday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Monday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Tueseday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Tueseday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Tueseday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Weneseday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Weneseday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Weneseday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Thurseday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Thurseday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Thurseday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Friday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Friday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Friday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Saturday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Saturday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Saturday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Sunday</th>
+            <th>
+                <ul>
+                    {% for s in subselect %}
+                        {% if s.days == "Sunday"%}
+                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                        {% endif %}
+                    {% empty %}
+                    <li>No passenger</li>
+                    {% endfor %}
+                    <form action="{% url 'book'%}" method="post">
+                        {% csrf_token %}
+                        <select name="quotas">
+                            {% for n in nonselect %}
+                                {% if n.days == "Sunday"%}
+                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="add">
+                    </form>
+                </ul>
+            </th>
+        </tr>
+    </table>
+
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    <a href="{% url 'u_index' %}">Profile</a>
+    <a href="{% url 'subject' %}">see all subjects</a>
+    {% endblock %}
+</div>

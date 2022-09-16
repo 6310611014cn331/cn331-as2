@@ -17,12 +17,15 @@ class detail(models.Model):
 
 
     def __str__(self):
-        return f"{self.code} {self.name} "
+        return f"{self.code}"
 
 class quotas(models.Model):
+    subject =  models.ForeignKey(detail, on_delete=models.CASCADE, related_name = "quotas", null=True)
+    days = models.CharField(max_length=10, null=True)
+    time = models.CharField(max_length=20, null=True)
     sit = models.IntegerField()
-    details = models.ManyToManyField(detail, blank=True, related_name="qouta")
+    #models.ManyToManyField(detail, blank=True, related_name="qouta")
     
     def __str__(self):
-        return f"{self.sit}"
+        return f"{self.subject}"
     
