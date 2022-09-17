@@ -50,4 +50,6 @@ def book(request,  username):
         subject = user_quotas.objects.get(pk=u)
         quotas = op_quota.objects.get(pk=request.POST["quotas"])
         subject.subject.add(quotas)
+        quotas.sit = quotas.sit - subject.amount_taken
+        quotas.save()
         return HttpResponseRedirect(reverse("quotas", args=(username,)))

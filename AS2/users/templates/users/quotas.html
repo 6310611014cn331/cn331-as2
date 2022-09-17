@@ -19,7 +19,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Monday"%}
+                                {% if n.days == "Monday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -43,7 +43,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Tueseday"%}
+                                {% if n.days == "Tueseday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -67,7 +67,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Weneseday"%}
+                                {% if n.days == "Weneseday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -115,7 +115,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Friday"%}
+                                {% if n.days == "Friday" and n.sit != 0%}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -139,7 +139,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Saturday"%}
+                                {% if n.days == "Saturday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -163,7 +163,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Sunday"%}
+                                {% if n.days == "Sunday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
