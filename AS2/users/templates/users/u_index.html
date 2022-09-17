@@ -12,9 +12,9 @@ Profile
 
     </ul>
 
-    <a href="{% url 'logout' %}">LOGOUT</a>
-    <a href="{% url 'quotas' user.username %}">QUOTA</a>
-    <a href="{% url 'subject' %}">see all subjects</a>
+    <a href="{% url 'quotas' user.username %}">Quota</a>
+    <a href="{% url 'subject' %}">See All Subjects</a><br><br>
+    <a ID="logoutt" href="{% url 'logout' %}">Logout</a>
 
     {% endblock %}
 </div>
