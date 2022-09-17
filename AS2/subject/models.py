@@ -17,7 +17,7 @@ class detail(models.Model):
 
 
     def __str__(self):
-        return f"{self.code}"
+        return f"{self.code} section: {self.section}"
 
 class quotas(models.Model):
     subject =  models.ForeignKey(detail, on_delete=models.CASCADE, related_name = "quotas", null=True)
