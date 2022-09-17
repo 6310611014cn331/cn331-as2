@@ -4,9 +4,9 @@
 1. Chawanarat Sabenjapakin 6310611014
 2. Runchana Supasavate     6310682650
 
-###Instruction Video
+### Instruction Video
 
-###How to use
+### How to use
 **Access Website**
 1. clone github repository จากนั้น open folder ใน VScode จากนั้น activate venv ด้วย ..\.venv\Scripts\Activate (window) แล้ว cd AS2 เข้าไปใน project แล้ว runserver ด้วย .\manage.py runserver (window)
 2. เข้าสู่เว็บไซต์ด้วย link: http://127.0.0.1:8000/ ที่จะปรากฏขึ้นเมื่อเรา runserver แล้ว
