@@ -13,7 +13,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}  
+                            <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
                                 <a href="{% url 'delete' user.username s.id%}">romove</a>
                             </li>
                         {% endif %}
@@ -23,7 +23,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Monday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -91,7 +91,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Thurseday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
+                            <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a href="{% url 'delete' user.username s.id%}">romove</a>
                             </li>
                         {% endif %}
@@ -101,7 +101,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Thurseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
