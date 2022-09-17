@@ -53,3 +53,13 @@ def book(request,  username):
         quotas.sit = quotas.sit - subject.amount_taken
         quotas.save()
         return HttpResponseRedirect(reverse("quotas", args=(username,)))
+
+def delete(request, username, s_id):
+    user = User.objects.get(username=username)
+    u = (user.usequota.get()).id
+    subject = user_quotas.objects.get(pk=u)
+    quotas = op_quota.objects.get(pk=s_id)
+    quotas.delete()
+    quotas.sit = quotas.sit + subject.amount_taken
+    quotas.save()
+    return HttpResponseRedirect(reverse("quotas", args=(username,)))

@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout', views.logout_view, name='logout'),
     path('subject', s_views.index, name='subject'),
     path('<username>/quotas', views.quotas, name='quotas'),
-    path('<username>/book', views.book, name='book')
+    path('<username>/book', views.book, name='book'),
+    path('<username>/<int:s_id>/delete', views.delete, name='delete')
 ]
