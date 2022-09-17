@@ -2,6 +2,7 @@
 {% block title %}
 quota
 {% endblock%}
+
 <div>
     {% block body %}
     <h1>Your Quota</h1>
@@ -12,7 +13,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username %}" method="post">
@@ -20,7 +21,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Monday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -36,7 +37,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Tueseday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -44,7 +45,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Tueseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -60,7 +61,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Weneseday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -68,7 +69,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Weneseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -84,7 +85,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Thurseday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -92,7 +93,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Thurseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -108,7 +109,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Friday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -116,7 +117,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Friday" and n.sit != 0%}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -132,7 +133,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Saturday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -140,7 +141,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Saturday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -156,7 +157,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Sunday"%}
-                            <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
+                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
@@ -164,7 +165,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Sunday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>

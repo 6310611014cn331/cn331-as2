@@ -2,11 +2,11 @@
 {% block body %}
 
 <h1>Subject List:</h1>
-<ul>
+<ul id="search">
     {% for s in subject %}
     <li>
         <a href= "{% url 'subject' s.id %}">
-            {{ s }}
+            {{ s }} section: {{ s.section }}
         </a>
     </li>
     {% empty %}
