@@ -13,7 +13,7 @@ quota
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
-                        {% endif %}
+                        {% endif %} 
                     {% empty %}
                     <li>No passenger</li>
                     {% endfor %}
@@ -189,8 +189,8 @@ quota
         </tr>
     </table>
 
-    <a href="{% url 'logout' %}">LOGOUT</a>
+    <a href="{% url 'logout' %}">Logout</a>
     <a href="{% url 'u_index' %}">Profile</a>
-    <a href="{% url 'subject' %}">see all subjects</a>
+    <a href="{% url 'subject' %}">See All Subjects</a>
     {% endblock %}
 </div>
