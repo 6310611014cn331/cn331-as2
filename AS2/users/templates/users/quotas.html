@@ -13,8 +13,13 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
+<<<<<<< HEAD
                             <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
                                 <a href="{% url 'delete' user.username s.id%}">romove</a>
+=======
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
+                                <a class="rmquo" href="{% url 'delete' user.username s.id %}">remove</a>
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -34,13 +39,13 @@ quota
         </tr>
 
         <tr>
-            <th>Tueseday</th>
+            <th>Tuesday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
-                        {% if s.days == "Tueseday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+                        {% if s.days == "Tuesday"%}
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -48,8 +53,8 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Tueseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                {% if n.days == "Tuesday" and n.sit != 0 %}
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -60,13 +65,13 @@ quota
         </tr>
 
         <tr>
-            <th>Weneseday</th>
+            <th>Wednesday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
-                        {% if s.days == "Weneseday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+                        {% if s.days == "Wednesday"%}
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -74,8 +79,8 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Weneseday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                {% if n.days == "Wednesday" and n.sit != 0 %}
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -86,13 +91,19 @@ quota
         </tr>
 
         <tr>
-            <th>Thurseday</th>
+            <th>Thursday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
+<<<<<<< HEAD
                         {% if s.days == "Thurseday"%}
                             <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a href="{% url 'delete' user.username s.id%}">romove</a>
+=======
+                        {% if s.days == "Thursday"%}
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -100,7 +111,11 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
+<<<<<<< HEAD
                                 {% if n.days == "Thurseday" and n.sit != 0 %}
+=======
+                                {% if n.days == "Thursday" and n.sit != 0 %}
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                                     <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -117,17 +132,17 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Friday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
                         {% endif %}
                     {% endfor %}
-                    <form action="{% url 'book' user.username%}" method="post">
+                    <form action="{% url 'book' user.username %}" method="post">
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Friday" and n.sit != 0%}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -143,8 +158,8 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Saturday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -153,7 +168,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Saturday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -169,8 +184,8 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Sunday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+                            <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -179,7 +194,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Sunday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
+                                    <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
