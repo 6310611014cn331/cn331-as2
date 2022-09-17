@@ -13,8 +13,13 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
+<<<<<<< HEAD
+                            <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
+                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+=======
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
                                 <a class="rmquo" href="{% url 'delete' user.username s.id %}">remove</a>
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -90,9 +95,15 @@ quota
             <th>
                 <ul>
                     {% for s in subselect %}
+<<<<<<< HEAD
+                        {% if s.days == "Thurseday"%}
+                            <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}
+                                <a href="{% url 'delete' user.username s.id%}">romove</a>
+=======
                         {% if s.days == "Thursday"%}
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -100,7 +111,11 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
+<<<<<<< HEAD
+                                {% if n.days == "Thurseday" and n.sit != 0 %}
+=======
                                 {% if n.days == "Thursday" and n.sit != 0 %}
+>>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                                     <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
