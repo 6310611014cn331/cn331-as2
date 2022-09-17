@@ -13,13 +13,8 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
-<<<<<<< HEAD
-                            <li>{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
-                                <a href="{% url 'delete' user.username s.id%}">romove</a>
-=======
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}  
                                 <a class="rmquo" href="{% url 'delete' user.username s.id %}">remove</a>
->>>>>>> 3c2575b340002cfec855a2db3309e7ece4ee7c62
                             </li>
                         {% endif %}
                     {% endfor %}
