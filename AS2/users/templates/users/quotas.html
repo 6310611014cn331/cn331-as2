@@ -34,11 +34,11 @@ quota
         </tr>
 
         <tr>
-            <th>Tueseday</th>
+            <th>Tuesday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
-                        {% if s.days == "Tueseday"%}
+                        {% if s.days == "Tuesday"%}
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
@@ -48,7 +48,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Tueseday" and n.sit != 0 %}
+                                {% if n.days == "Tuesday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -60,11 +60,11 @@ quota
         </tr>
 
         <tr>
-            <th>Weneseday</th>
+            <th>Wednesday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
-                        {% if s.days == "Weneseday"%}
+                        {% if s.days == "Wednesday"%}
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
@@ -74,7 +74,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Weneseday" and n.sit != 0 %}
+                                {% if n.days == "Wednesday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
@@ -86,11 +86,11 @@ quota
         </tr>
 
         <tr>
-            <th>Thurseday</th>
+            <th>Thursday</th>
             <th>
                 <ul>
                     {% for s in subselect %}
-                        {% if s.days == "Thurseday"%}
+                        {% if s.days == "Thursday"%}
                             <li class="listquo">{{ s }} time: {{ s.time }} sit: {{ s.sit }}
                                 <a class="rmquo" href="{% url 'delete' user.username s.id%}">remove</a>
                             </li>
@@ -100,7 +100,7 @@ quota
                         {% csrf_token %}
                         <select name="quotas">
                             {% for n in nonselect %}
-                                {% if n.days == "Thurseday" and n.sit != 0 %}
+                                {% if n.days == "Thursday" and n.sit != 0 %}
                                     <option value="{{ n.id }}">{{ n }} time: {{ n.time }} sit: {{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
