@@ -13,7 +13,7 @@ quota
                 <ul>
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
-                            <li>{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
+                            <li style="color:red">{{ s }} section: {{ s.subject.section }} time: {{ s.time }} sit: {{ s.sit }}</li>
                         {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username %}" method="post">
