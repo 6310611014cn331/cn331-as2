@@ -6,7 +6,7 @@
     {% for s in subject %}
     <li>
         <a href= "{% url 'subject' s.id %}">
-            {{ s }} section: {{ s.section }}
+            {{ s }}
         </a>
     </li>
     {% empty %}
