@@ -21,11 +21,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Monday" and n.sit != 0 %}
-<<<<<<< HEAD
-                                    <option value="{{ n.id }}" >{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
-=======
                                     <option value="{{ n.id }}">{{ n }} section: {{ n.subject.section }} time: {{ n.time }} sit: {{ n.sit }}</option>
->>>>>>> fb32ba581b21a8523417adb5739f0555503b4afa
                                 {% endif %}
                             {% endfor %}
                         </select>

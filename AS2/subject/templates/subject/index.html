@@ -1,13 +1,8 @@
 {% extends 'subject\\layout.html' %}
 {% block body %}
 
-<<<<<<< HEAD
 <h1>Subject List</h1>
 <ul>
-=======
-<h1>Subject List:</h1>
-<ul id="search">
->>>>>>> fb32ba581b21a8523417adb5739f0555503b4afa
     {% for s in subject %}
     <li>
         <a href= "{% url 'subject' s.id %}">
