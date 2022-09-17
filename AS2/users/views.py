@@ -40,11 +40,14 @@ def quotas(request, username):
         "time":op_quota.time,
     })
 
+def subtract(value, arg):
+    return value - arg
+
 def book(request,  username):
     user = User.objects.get(username=username)
     u = (user.usequota.get()).id
     if request.method == "POST":
         subject = user_quotas.objects.get(pk=u)
-        quotas = op_quota.objects.get(pk=request.POST["op_quotas"])
-        subject.add(quotas)
-        return HttpResponseRedirect(reverse("qoutas"))
+        quotas = op_quota.objects.get(pk=request.POST["quotas"])
+        subject.subject.add(quotas)
+        return HttpResponseRedirect(reverse("quotas", args=(username,)))
