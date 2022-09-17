@@ -13,9 +13,7 @@ quota
                     {% for s in subselect %}
                         {% if s.days == "Monday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
-                        {% endif %} 
-                    {% empty %}
-                    <li>No passenger</li>
+                        {% endif %}
                     {% endfor %}
                     <form action="{% url 'book' user.username %}" method="post">
                         {% csrf_token %}
@@ -40,8 +38,6 @@ quota
                         {% if s.days == "Tueseday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
@@ -66,8 +62,6 @@ quota
                         {% if s.days == "Weneseday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
@@ -92,8 +86,6 @@ quota
                         {% if s.days == "Thurseday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
@@ -118,8 +110,6 @@ quota
                         {% if s.days == "Friday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
@@ -144,8 +134,6 @@ quota
                         {% if s.days == "Saturday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
@@ -170,8 +158,6 @@ quota
                         {% if s.days == "Sunday"%}
                             <li>{{ s }} time:{{ s.time }} sit:{{ s.sit }}</li>
                         {% endif %}
-                    {% empty %}
-                    <li>No passenger</li>
                     {% endfor %}
                     <form action="{% url 'book' user.username%}" method="post">
                         {% csrf_token %}
