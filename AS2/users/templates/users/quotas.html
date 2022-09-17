@@ -20,7 +20,7 @@ quota
                         <select name="quotas">
                             {% for n in nonselect %}
                                 {% if n.days == "Monday" and n.sit != 0 %}
-                                    <option value="{{ n.id }}">{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
+                                    <option value="{{ n.id }}" >{{ n }} time:{{ n.time }} sit:{{ n.sit }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -174,9 +174,12 @@ quota
             </th>
         </tr>
     </table>
-    <br><br>
-    <a href="{% url 'logout' %}">Logout</a>
+    
+    
     <a href="{% url 'u_index' %}">Profile</a>
     <a href="{% url 'subject' %}">See All Subjects</a><br><br>
+    <a ID="logoutt" href="{% url 'logout' %}">Logout</a>
+    <br><br>
+
     {% endblock %}
 </div>
