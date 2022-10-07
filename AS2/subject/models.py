@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -28,4 +29,7 @@ class quotas(models.Model):
     
     def __str__(self):
         return f"{self.subject}"
+
+    def sit_is_available(self):
+        return self.user_quota.count() < self.sit
     
