@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "users\\u_index.html")
+    return render(request, "users/u_index.html")
 
 def login_view(request):
     if request.method == "POST":
@@ -22,18 +22,18 @@ def login_view(request):
             login(request, user)
             return HttpResponseRedirect(reverse("u_index"))
         else:
-            return render(request, "users\\login.html", {"message":"Invalid credentials."})
-    return render(request, "users\\login.html")
+            return render(request, "users/login.html", {"message":"Invalid credentials."})
+    return render(request, "users/login.html")
 
 def logout_view(request):
     logout(request)
-    return render(request, "users\\login.html", {"message":"You are logged out"})
+    return render(request, "users/login.html", {"message":"You are logged out"})
 
 def quotas(request, username):
     user = User.objects.get(username=username)
     u = (user.usequota.get()).id
     q = user_quotas.objects.get(pk=u)
-    return render(request, "users\\quotas.html", {
+    return render(request, "users/quotas.html", {
         "subselect":  q.subject.all(), 
         "nonselect":op_quota.objects.exclude(user_quota=q).all(),
         "day":op_quota.days,
