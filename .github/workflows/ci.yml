@@ -11,5 +11,5 @@ jobs:
         pip3 install -r AS2/requirements.txt
         python AS2/manage.py makemigrations
         python AS2/manage.py migrate
-        coverage run --source='.' manage.py test
+        coverage run --source='.' AS2/manage.py test
         coverage report
