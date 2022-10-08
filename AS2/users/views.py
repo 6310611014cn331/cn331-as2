@@ -2,7 +2,7 @@ from operator import sub
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, exceptions
 from users.models import user_quotas
 from subject.models import quotas as op_quota
 from django.contrib.auth.models import User
@@ -33,15 +33,15 @@ def quotas(request, username):
     user = User.objects.get(username=username)
     u = (user.usequota.get()).id
     q = user_quotas.objects.get(pk=u)
-    return render(request, "users/quotas.html", {
-        "subselect":  q.subject.all(), 
-        "nonselect":op_quota.objects.exclude(user_quota=q).all(),
-        "day":op_quota.days,
-        "time":op_quota.time,
-    })
-
-def subtract(value, arg):
-    return value - arg
+    try:
+        return render(request, "users/quotas.html", {
+            "subselect":  q.subject.all(), 
+            "nonselect":op_quota.objects.exclude(user_quota=q).all(),
+            "day":op_quota.days,
+            "time":op_quota.time,
+        })
+    except exceptions.NoReverseMatch:
+        return HttpResponseRedirect(reverse("login"))
 
 def book(request,  username):
     user = User.objects.get(username=username)
